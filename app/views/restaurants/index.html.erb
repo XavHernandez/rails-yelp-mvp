@@ -1,0 +1,13 @@
+<div class="container">
+  <ul class="py-3">
+    <% @restaurants.each do |restaurant| %>
+      <div class="py-3">
+      <li>Nom: <%= link_to restaurant.name, restaurant_path(restaurant) %> - Category: <%=restaurant.category %></li>
+      <li>Address: <%= restaurant.address %></li>
+      </div>
+    <% end %>
+  </ul>
+  <div>
+    <%= link_to "Add a new Restaurant!", new_restaurant_path %>
+  </div>
+</div>
