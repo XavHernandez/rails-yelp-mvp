@@ -6,6 +6,13 @@
     <li class="list-group-item mb-2"><%= review.content %> - <%= review.rating %></li>
   <% end %>
 </ul>
+<br>
+<div>
+<%= simple_form_for [ @restaurant, @review ] do |r| %>
+  <%= r.input :content %>
+  <%= r.input :rating %>
+  <%= r.submit "Submit Review", class: "btn btn-primary my-3" %>
+<% end %>
+</div>
 
-<p> <%= link_to 'Leave a Review', new_restaurant_review_path(@restaurant) %> </p>
 <p> <%= link_to "Return to Restaurants List", restaurants_path %> </p>
